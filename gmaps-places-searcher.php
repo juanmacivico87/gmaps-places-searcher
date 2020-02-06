@@ -2,7 +2,7 @@
 /*
 Plugin Name: Google Maps - Places Searcher
 Plugin URI: https://www.juanmacivico87.com
-Description: A little plugin description
+Description: This plugin allows you to add to your website a map that display the places you have defined in the custom post type «Places» and search them
 Version: 1.0
 Author: Juan Manuel Civico Cabrera
 Author URI: https://www.juanmacivico87.com

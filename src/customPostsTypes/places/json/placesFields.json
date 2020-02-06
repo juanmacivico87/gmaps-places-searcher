@@ -1,0 +1,89 @@
+[
+    {
+        "key": "group_5e3ab378a7066",
+        "title": "Place Settings",
+        "fields": [
+            {
+                "key": "field_5e3ab3849ae3c",
+                "label": "Latitude",
+                "name": "_jmc87_place_latitude",
+                "type": "number",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "50",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": 0,
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "min": -90,
+                "max": 90,
+                "step": ""
+            },
+            {
+                "key": "field_5e3ab4249ae3d",
+                "label": "Longitude",
+                "name": "_jmc87_place_longitude",
+                "type": "number",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "50",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": 0,
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "min": -180,
+                "max": 180,
+                "step": ""
+            },
+            {
+                "key": "field_5e3ab48d9ae3f",
+                "label": "Allow new subscribers?",
+                "name": "_jmc87_is_place_allow_new_subscriber",
+                "type": "button_group",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "choices": {
+                    "1": "Yes",
+                    "0": "No"
+                },
+                "allow_null": 0,
+                "default_value": "",
+                "layout": "horizontal",
+                "return_format": "value"
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "place"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "side",
+        "style": "seamless",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": true,
+        "description": ""
+    }
+]

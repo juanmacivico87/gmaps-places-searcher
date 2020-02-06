@@ -1,8 +1,6 @@
-<section>
-    <div id="map"></div>
-    <form action="" method="post">
-        <input type="text" name="address" placeholder="<?php _e( 'Enter address', 'jmc87_gmaps_places_searcher' ) ?>">
-        <button type="button" id="search" name="search"><?php _e( 'Send', 'jmc87_gmaps_places_searcher' ) ?></button>
-    </form>
-    <div id="results"></div>
-</section>
+<?php 
+if ( is_admin() ) : 
+    include GMAPS_PLACES_SEARCHER_PLUGIN_DIR . 'src/customBlocks/googleMaps/views/sides/back-side.php';
+else :
+    include GMAPS_PLACES_SEARCHER_PLUGIN_DIR . 'src/customBlocks/googleMaps/views/sides/front-side.php';
+endif;

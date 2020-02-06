@@ -63,13 +63,13 @@ class JMC87_GoogleMapsBlock
             acf_register_block_type(
                 array(
                     'name'				=> 'google-maps',
-                    'title'				=> __( 'Google Maps Block', 'jmc87_gmaps_places_searcher' ),
-                    'description'		=> '',
+                    'title'				=> __( 'Google Maps', 'jmc87_gmaps_places_searcher' ),
+                    'description'		=> __( 'This block allows you to add to your website a map that display the places you have defined in the custom post type «Places» and search them', 'jmc87_gmaps_places_searcher' ),
                     'category'			=> 'formatting',
                     'icon'				=> 'admin-site-alt',
                     'keywords'			=> array( 'maps', 'google maps' ),
                     'post_types'        => array( 'page' ),
-                    'mode'              => 'edit',
+                    'mode'              => 'preview',
                     'render_template'   => GMAPS_PLACES_SEARCHER_PLUGIN_DIR . 'src/customBlocks/googleMaps/views/template-google-maps.php',
                     'enqueue_assets'    => function() {
                         if ( !is_admin() )
@@ -78,7 +78,7 @@ class JMC87_GoogleMapsBlock
 
                             if ( !wp_script_is( 'jquery' ) )
                                 wp_enqueue_script( 'jquery', 'https://code.jquery.com/jquery-3.4.1.min.js', array(), '', true );
-                                
+
                             wp_enqueue_script( 'google-maps', GMAPS_PLACES_SEARCHER_PLUGIN_URL . 'src/customBlocks/googleMaps/js/scripts.js', array( 'jquery' ), '', true );
 
                             $args = array(
@@ -91,7 +91,7 @@ class JMC87_GoogleMapsBlock
                             wp_localize_script( 'google-maps', 'js_vars', $args );
                         }
                     },
-                    'supports' => array( 'mode' => false ),
+                    'supports' => array( 'mode' => false, 'multiple' => false ),
                 )
             );
         }

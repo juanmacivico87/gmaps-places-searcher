@@ -23,8 +23,6 @@ class JMC87_PlacesPostType
     {
         add_action( 'init', array( $this, 'jmc87_add_places_post_type' ) );
         add_action( 'init', array( $this, 'jmc87_add_places_custom_fields' ) );
-        add_filter( 'archive_template', array( $this, 'jmc87_get_places_post_type_templates' ) );
-        add_filter( 'single_template', array( $this, 'jmc87_get_places_post_type_templates' ) );
     }
 
     public function jmc87_add_places_post_type()
@@ -86,24 +84,6 @@ class JMC87_PlacesPostType
         flush_rewrite_rules();
     }
 
-    public function jmc87_get_places_post_type_templates( $template )
-    {
-        if ( get_post_type() === $this->post_type )
-        { 
-            switch( true ) 
-            {
-                case is_archive() && !is_tax():
-                    $template = GMAPS_PLACES_SEARCHER_PLUGIN_DIR . 'src/customPostsTypes/places/views/archive-place.php';
-                    break;
-                case is_single():
-                    $template = GMAPS_PLACES_SEARCHER_PLUGIN_DIR . 'src/customPostsTypes/places/views/single-place.php';
-                    break;
-            }
-        }
-
-        return $template;
-    }
-
     public function jmc87_add_places_custom_fields()
     {
         if ( function_exists( 'acf_add_local_field_group' ) ) :
@@ -155,8 +135,8 @@ class JMC87_PlacesPostType
                     ),
                     array(
                         'key' => 'field_5e3ab48d9ae3f',
-                        'label' => __( 'Allow new subscribers?', 'jmc87_gmaps_places_searcher' ),
-                        'name' => '_jmc87_is_place_allow_new_subscriber',
+                        'label' => __( 'Show in map?', 'jmc87_gmaps_places_searcher' ),
+                        'name' => '_jmc87_is_place_show_in_map',
                         'type' => 'button_group',
                         'instructions' => '',
                         'required' => 0,

@@ -47,8 +47,8 @@
             },
             {
                 "key": "field_5e3ab48d9ae3f",
-                "label": "Allow new subscribers?",
-                "name": "_jmc87_is_place_allow_new_subscriber",
+                "label": "Show in map?",
+                "name": "_jmc87_is_place_show_in_map",
                 "type": "button_group",
                 "instructions": "",
                 "required": 0,

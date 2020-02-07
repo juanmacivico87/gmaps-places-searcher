@@ -18,7 +18,7 @@ var initMap = () => {
         center: latLng
     }
 
-    map = new google.maps.Map( document.getElementById( 'map' ), mapOptions );
+    map = new google.maps.Map( document.querySelector( '#map' ), mapOptions );
     renderCentersOnMap();
 }
 
@@ -76,7 +76,7 @@ const renderNearestCenter = ( zipCode, pointA ) => {
     } else {
         results = 'No se ha encontrado ningún centro en un radio de 50km para el código postal ' + zipCode + ' <a href="' + js_vars.all_places_link + '" target="_blank">[Ver todos]</a>';
     }
-    jQuery( '#results' ).html( results );
+    document.querySelector( '#results' ).innerHTML = results;
 }
 
 const setAddress = ( newAddress ) => {
@@ -92,8 +92,8 @@ const setAddress = ( newAddress ) => {
     } );
 }
 
-jQuery( '#search' ).on( 'click', () => {
-    let address  = jQuery( 'input[name="address"]' ).val().replace( ' ', '+' );
+document.querySelector( '#search' ).addEventListener( 'click', () => {
+    let address  = document.querySelector( 'input[name="address"]' ).value.replace( ' ', '+' );
     let geocoder = new google.maps.Geocoder;
 
     geocoder.geocode( { 'address': address, region: 'es' }, ( results, status ) => {

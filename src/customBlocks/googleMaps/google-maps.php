@@ -75,11 +75,7 @@ class JMC87_GoogleMapsBlock
                         if ( !is_admin() )
                         {
                             wp_enqueue_style( 'google-maps', GMAPS_PLACES_SEARCHER_PLUGIN_URL . 'src/customBlocks/googleMaps/css/styles.css' );
-
-                            if ( !wp_script_is( 'jquery' ) )
-                                wp_enqueue_script( 'jquery', 'https://code.jquery.com/jquery-3.4.1.min.js', array(), '', true );
-
-                            wp_enqueue_script( 'google-maps', GMAPS_PLACES_SEARCHER_PLUGIN_URL . 'src/customBlocks/googleMaps/js/scripts.js', array( 'jquery' ), '', true );
+                            wp_enqueue_script( 'google-maps', GMAPS_PLACES_SEARCHER_PLUGIN_URL . 'src/customBlocks/googleMaps/js/scripts.js', array(), '', true );
 
                             $args = array(
                                 'ajax_url'        => admin_url( 'admin-ajax.php' ),
